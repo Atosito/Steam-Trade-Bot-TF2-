@@ -1,0 +1,16 @@
+{
+  "Scrap Metal":
+  {
+    "value": 0.11
+  },
+
+  "Reclaimed Metal":
+   {
+    "value": 0.33
+  },
+
+  "Refined Metal":
+   {
+    "value": 1.00
+  }
+}
