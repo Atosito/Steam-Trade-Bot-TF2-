@@ -3,7 +3,6 @@ const SteamTotp = require('steam-totp');
 const SteamCommunity = require('steamcommunity');
 const TradeOfferManager = require('steam-tradeoffer-manager');
 const client = new SteamUser();
-var tf2 = new TeamFortress2(client);
 const community = new SteamCommunity();
 const manager = new TradeOfferManager({
 	steam: client,
@@ -12,6 +11,8 @@ const manager = new TradeOfferManager({
 });
 
 var TeamFortress2 = require('tf2');
+
+var tf2 = new TeamFortress2(client);
 var fs = require('fs');
 var colors = require('colors');
 var colours = require('colors/safe');
