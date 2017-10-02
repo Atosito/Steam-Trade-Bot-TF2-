@@ -50,7 +50,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
  2. **Load TF2's BP** and organize it by type.
  3. - new offer -
  4. **Parse new offer** and set the bot to a busy state. _(This prevents handle multiple offers at same time)_
- 5. **Identify offe**r and declare it into an offerState:
+ 5. **Identify offer** and declare it into an offerState:
  	- 'aceptable' : Offer will be accepted. It's a donation or it's from admin. 
     - 'deneganle' : Offer wil be declined. It's glitched, has trade hold or its an scam.
     - 'valida' : Offer will be processed and getting value of itemsToGive and itemsToReceive.
@@ -59,6 +59,40 @@ This is an open-source project that tries to give you one example of a **Steam-T
  8. Sum values of items and determine if offer will be **declined** or **accepted**.
  9. **Confirm** our action.
  10. set Bot to not-busy state.
+ 
+ # About errors.
+ 
+ I [Tomas](https://github.com/toomi17) deny have any responsability for non-wanted impact of using this type of softwares and bring knowledge that the entire code could have any type of errors.
+ 
+ # Need Help?
+ 
+ Communities that could be helpful:
+ -[Reddit SteamBot](https://www.reddit.com/r/SteamBot/)
+ -[Doctor McKay forum](https://dev.doctormckay.com/forum/10-general/)
+ -[My Steam Profile](http://steamcommunity.com/profiles/76561198050753995/) | I am glad to help you setting up your bot. Add me
+ 
+ # License
+ 
+ This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/toomi17/Steam-Trade-Bot-TF2-/blob/master/LICENSE)file for details
+ 
+# Hire me.
+
+I am able to develope you a customize bot for PayPal money or Steam Items.
+
+### Possibles features of paid BOT.
+- Max Stock :heavy_check_mark:
+- Post comment on user-profile after each trade. :heavy_check_mark:
+- Automatic list items on backpack.tf :heavy_check_mark:
+- Accept a X% overpay in items. Using backpack.tf priceList api. :heavy_check_mark:
+- Send a Steam msg to an admin acc after each trade with items traded. :heavy_check_mark:
+- Usefull commands. :heavy_check_mark:
+
+# Contact me.
+
+ -[My Steam Profile](http://steamcommunity.com/profiles/76561198050753995/)
+ -gonzaltomas@gmail.com
+
+ 
  
  
  
