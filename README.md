@@ -7,9 +7,9 @@ This is an open-source project that tries to give you one example of a **Steam-T
 
 # Prerequisites
 
-### - Node.js
-- npm
-- JS Editor Program (Ex: Atom)
+> - Node.js
+> - npm
+> - JS Editor Program (Ex: Atom)
 
 # Essentials
 
