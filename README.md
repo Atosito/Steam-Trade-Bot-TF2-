@@ -19,11 +19,14 @@ This is an open-source project that tries to give you one example of a **Steam-T
 
 # Set Up Bot
 
-## Edit config.js file.
-## Edit DBPrices.json
-> - "Item name as it appears in inventory": {
+### Edit config.js file.
+### Edit DBPrices.json
+    "Item name as it appears in inventory": {
+    
     "craftable": "Craftable" or "Non-Craftable",
+    
     "buy": price to buy in refs(13.11),
+    
     "sell": price to sell in refs(13.22)
   }
 
