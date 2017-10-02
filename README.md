@@ -28,7 +28,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
     "buy": price to buy in refs(13.11),
     
     "sell": price to sell in refs(13.22)
-  }
+  	}
 
 
 
