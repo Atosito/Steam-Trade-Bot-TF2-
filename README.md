@@ -68,7 +68,9 @@ This is an open-source project that tries to give you one example of a **Steam-T
  
  Communities that could be helpful:
  -[Reddit SteamBot](https://www.reddit.com/r/SteamBot/)
+ 
  -[Doctor McKay forum](https://dev.doctormckay.com/forum/10-general/)
+ 
  -[My Steam Profile](http://steamcommunity.com/profiles/76561198050753995/) | I am glad to help you setting up your bot. Add me
  
  # License
