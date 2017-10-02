@@ -17,6 +17,19 @@ This is an open-source project that tries to give you one example of a **Steam-T
 > - Shared Secret and Identity Secret Key: ([What is?](http://searchsecurity.techtarget.com/definition/shared-secret) | [How to get it? -iOS-](https://forums.backpack.tf/index.php?/topic/45995-guide-how-to-get-your-shared-secret-from-ios-device-steam-mobile/) | [How to get it? -Android-](https://forums.backpack.tf/index.php?/topic/46354-guide-how-to-find-the-steam-identity_secret-on-an-android-phone/))
 > - Knowledge about JSON. [How a JSON works?](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON)
 
+# Set Up Bot
+
+## Edit config.js file.
+## Edit DBPrices.json
+> - "Item name as it appears in inventory": {
+    "craftable": "Craftable" or "Non-Craftable",
+    "buy": price to buy in refs(13.11),
+    "sell": price to sell in refs(13.22)
+  }
+
+
+
+
 # Node.js Modules
 
 >- [steam-user](https://www.npmjs.com/package/steam-user) | It lets you interface with Steam without running an actual Steam client.
