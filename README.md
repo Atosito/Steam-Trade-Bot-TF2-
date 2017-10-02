@@ -26,7 +26,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
 >- and more..
 
 # What it really does? - Step by Step -
-> 0. Pending about: Steam Community notifications: Friend requests, new trade offers, any change in trade offer state. This is thanks to events listeners, base of node.js. You will need to know how they works: [Documentation](https://nodejs.org/api/events.html)
-> 1. Login into Steam and set TF2 as game played.
-> 2. Load TF2's BP and organize it by type.
-> 3. 
+ 0. Pending about: Steam Community notifications: Friend requests, new trade offers, any change in trade offer state. This is thanks to events listeners, base of node.js. You will need to know how they works: [Documentation](https://nodejs.org/api/events.html)
+ 1. Login into Steam and set TF2 as game played.
+ 2. Load TF2's BP and organize it by type.
+ 3. 
