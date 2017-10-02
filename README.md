@@ -13,7 +13,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
 
 # Essentials
 
-> - **Steam Account available for trade**
+> - Steam Account available for trade
 > - Shared Secret and Identity Secret Key: ([What is?](http://searchsecurity.techtarget.com/definition/shared-secret) | [How to get it? -iOS-](https://forums.backpack.tf/index.php?/topic/45995-guide-how-to-get-your-shared-secret-from-ios-device-steam-mobile/) | [How to get it? -Android-](https://forums.backpack.tf/index.php?/topic/46354-guide-how-to-find-the-steam-identity_secret-on-an-android-phone/))
 > - Knowledge about JSON. [How a JSON works?](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON)
 
@@ -24,3 +24,9 @@ This is an open-source project that tries to give you one example of a **Steam-T
 >- [steam-tradeoffer-manager](https://www.npmjs.com/package/steam-tradeoffer-manager) | This module is designed to be a completely self-contained manager for Steam trade offers.
 >- [tf2](https://www.npmjs.com/package/tf2) | This module provides a very flexible interface for interacting with the Team Fortress 2 Game Coordinator. It's designed to work with a node-steam SteamUser or node-steam-user SteamUser instance.
 >- and more..
+
+# What it really does? - Step by Step -
+> 0. Pending about: Steam Community notifications: Friend requests, new trade offers, any change in trade offer state. This is thanks to events listeners, base of node.js. You will need to know how they works: [Documentation](https://nodejs.org/api/events.html)
+> 1. Login into Steam and set TF2 as game played.
+> 2. Load TF2's BP and organize it by type.
+> 3. 
