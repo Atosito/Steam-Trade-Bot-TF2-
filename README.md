@@ -21,14 +21,15 @@ This is an open-source project that tries to give you one example of a **Steam-T
 
 - Edit config.js file.
 - Edit DBPrices.json
-    "Item name as it appears in inventory": {
+	### Model
+    	"Item name as it appears in inventory": {
     
-    "craftable": "Craftable" or "Non-Craftable",
+    	"craftable": "Craftable" or "Non-Craftable",
     
-    "buy": price to buy in refs(13.11),
+    	"buy": price to buy in refs(13.11),
     
-    "sell": price to sell in refs(13.22)
-  	}
+    	"sell": price to sell in refs(13.22)
+  		}	
 
 
 
