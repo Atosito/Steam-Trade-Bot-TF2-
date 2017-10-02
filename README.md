@@ -13,9 +13,9 @@ This is an open-source project that tries to give you one example of a **Steam-T
 
 # Essentials
 
-- Steam Account available for trade
-- Shared Secret and Identity Secret Key: ([What is?](http://searchsecurity.techtarget.com/definition/shared-secret) | [How to get it? -iOS-](https://forums.backpack.tf/index.php?/topic/45995-guide-how-to-get-your-shared-secret-from-ios-device-steam-mobile/) | [How to get it? -Android-](https://forums.backpack.tf/index.php?/topic/46354-guide-how-to-find-the-steam-identity_secret-on-an-android-phone/))
-- Knowledge about JSON. [How a JSON works?](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON)
+> - Steam Account available for trade
+> - Shared Secret and Identity Secret Key: ([What is?](http://searchsecurity.techtarget.com/definition/shared-secret) | [How to get it? -iOS-](https://forums.backpack.tf/index.php?/topic/45995-guide-how-to-get-your-shared-secret-from-ios-device-steam-mobile/) | [How to get it? -Android-](https://forums.backpack.tf/index.php?/topic/46354-guide-how-to-find-the-steam-identity_secret-on-an-android-phone/))
+> - Knowledge about JSON. [How a JSON works?](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON)
 
 # Node.js Modules
 - [steam-user](https://www.npmjs.com/package/steam-user) | It lets you interface with Steam without running an actual Steam client.
