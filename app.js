@@ -77,41 +77,45 @@ setInterval(function(){
 
 const processTradeOffer = function(offer) {
 	busy = true;
-		return identyOffer(offer)
-		.then(function(offerState) {
+
+	return getUserDetalles(offer)
+	.then(function(escrowDays){
+	return identyOffer(offer, escrowDays);
+	}).then(function(offerState) {
       return finishTradeOffer(offer, offerState);
-    })
-    .then(function() {
+    }).then(function() {
       if(arrayOfObjects.length > 0){
-    		arrayOfObjects.splice(0, 1);
-      }
+    		arrayOfObjects.splice(0, 1);}
 				busy = false;
-    })
-    .catch(err => console.log(err));
+			}).catch(function(){
+				busy=false;
+				arrayOfObjects.push(offer);
+			})
 }
 
-const identyOffer = function (offer){
+const identyOffer = function (offer, escrowDays){
 	return new Promise(function (resolve, reject){
 		var offerState = 'undefined';
-		if(offer.isGlitched() || offer.state === 11) {
-			console.log(`Incomming offer id#${offer.id} is glitched or has escrow days. Declining..`.bgRed);
+		if(offer.isGlitched() || offer.state === 11 || escrowDays > 0) {
 			offerState = 'denegable';
 			return resolve(offerState);
 		}
+		else if (offer.state === 1 || offer.state === 3 || offer.state === 6 || offer.state === 7 || offer.state === 8) {
+			offerState = 'deleteable';
+			return resolve(offerState);
+		}
 		else if(offer.partner.getSteamID64() === config.id_bossAccount){
-			console.log('Offer from Boss: Accepting...'.green)
 			offerState = 'aceptable';
 			return resolve(offerState);
 		}
 		else if (offer.itemsToGive.length < 1) {
 			offerState = 'aceptable';
-			console.log(`Incomming offer id#${offer.id} is a Donation!!. Acepting..`.bgGreen);
+			console.log('Donation =)');
 			return resolve(offerState);
 
 		}
 		else{
 			offerState = 'valida';
-			console.log(`Incomming offer id#${offer.id}. Counting items..`);
 			return resolve(offerState);
 		}
   })
@@ -142,7 +146,20 @@ const identifyItems = function (offer){
 				arrayOfObjects.splice(0, 1)}
 				busy = false;})
 	}
-	const determinateOfferState = function (valueToGive, valueToReceive){
+const getUserDetalles = function (offer){
+	return new Promise(function (resolve, reject){
+	offer.getUserDetails(function(err, them){
+		if(them){
+			var escrowDays = them.escrowDays;
+			return resolve(escrowDays);
+		}
+		else{
+			return reject();
+		}
+	})
+	})
+}
+const determinateOfferState = function (valueToGive, valueToReceive){
 		var 	ToGive = getRight(valueToGive);
 		var  ToReceive = getRight(valueToReceive);
 
@@ -159,7 +176,7 @@ const identifyItems = function (offer){
 				return Promise.resolve(offerState);
 			}
 	}
-	const getValueItemsToGive = function(offer){
+const getValueItemsToGive = function(offer){
 		return new Promise(function(resolve, reject){
 			 var filename = './DBPrices.json';
 	 			var type = 'utf8';
@@ -185,7 +202,7 @@ const identifyItems = function (offer){
 					})
 
 	}
-	const getValueItemsToReceive = function(offer){
+const getValueItemsToReceive = function(offer){
 		return new Promise(function(resolve, reject){
 			 var filename = './DBPrices.json';
 				 var type = 'utf8';
@@ -209,7 +226,7 @@ const identifyItems = function (offer){
 					})
 
 	}
-	const getValueOfEachItem = function(database, object, buying){
+const getValueOfEachItem = function(database, object, buying){
 
 		return new Promise(function(resolve, reject){
 
@@ -270,7 +287,7 @@ const identifyItems = function (offer){
 		})
 	}
 
-	const setItemDetails = function(object){
+const setItemDetails = function(object){
 		return new Promise (function(resolve, reject){
 			console.log(object);
 			var item = {
@@ -291,7 +308,7 @@ const identifyItems = function (offer){
 
 			})
 	}
-	const sumValues = function (arrNumbers){
+const sumValues = function (arrNumbers){
 		return new Promise (function(resolve, reject){
 			if(arrNumbers.length > 0){
 			const sum = arrNumbers.reduce((total, amount) => total + amount);
@@ -302,14 +319,14 @@ const identifyItems = function (offer){
 		}
 		})
 	}
-	function getRight(v) {
+function getRight(v) {
 
 	    var i = Math.floor(v),
 	        f = Math.round((v - i) / 0.11);
 	    return i + (f === 9 || f * 0.11);
 
 	}
-	const acceptTradeOffer= function(offer){
+const acceptTradeOffer= function(offer){
 
 			  offer.accept(false, function(error, status) {
 					if(error) {
@@ -341,7 +358,7 @@ const identifyItems = function (offer){
 				});
 
 	}
-	const declineTradeOffer = function (offer){
+const declineTradeOffer = function (offer){
 
 			offer.decline(function(error) {
 
