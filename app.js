@@ -87,7 +87,7 @@ const processTradeOffer = function(offer) {
       if(arrayOfObjects.length > 0){
     		arrayOfObjects.splice(0, 1);}
 				busy = false;
-			}).catch(function(){
+	}).catch(function(){
 				busy=false;
 				arrayOfObjects.push(offer);
 			})
@@ -98,10 +98,6 @@ const identyOffer = function (offer, escrowDays){
 		var offerState = 'undefined';
 		if(offer.isGlitched() || offer.state === 11 || escrowDays > 0) {
 			offerState = 'denegable';
-			return resolve(offerState);
-		}
-		else if (offer.state === 1 || offer.state === 3 || offer.state === 6 || offer.state === 7 || offer.state === 8) {
-			offerState = 'deleteable';
 			return resolve(offerState);
 		}
 		else if(offer.partner.getSteamID64() === config.id_bossAccount){
