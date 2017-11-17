@@ -144,7 +144,7 @@ const identifyItems = function (offer){
 	}
 const getUserDetalles = function (offer){
 	return new Promise(function (resolve, reject){
-	offer.getUserDetails(function(err, them){
+	offer.getUserDetails(function(err,me, them){
 		if(them){
 			var escrowDays = them.escrowDays;
 			return resolve(escrowDays);
