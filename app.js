@@ -10,20 +10,20 @@ const manager = new TradeOfferManager({
     language: 'en'
 });
 
-var TeamFortress2 = require('tf2');
+const TeamFortress2 = require('tf2');
 
-var tf2 = new TeamFortress2(client);
-var fs = require('fs');
-var colors = require('colors');
-var colours = require('colors/safe');
-var currencies = require('./Currencies.json')
-var config = require('./config');
+const tf2 = new TeamFortress2(client);
+const fs = require('fs');
+const colors = require('colors');
+const colours = require('colors/safe');
+const currencies = require('./Currencies.json')
+const config = require('./config');
 
 var arrayOfObjects = [];
 var busy = false;
 
-var readAndWrite = require('./readAndWrite.js');
-var ReadAndWrite = new readAndWrite();
+const readAndWrite = require('./readAndWrite.js');
+const ReadAndWrite = new readAndWrite();
 const logOnOptions = {
     accountName: config.accountName,
     password: config.password,
@@ -33,8 +33,7 @@ const logOnOptions = {
 client.logOn(logOnOptions);
 
 tf2.on("backpackLoaded", function() {
-    var sortType = parseInt("4");
-    tf2.sortBackpack(sortType);
+    tf2.sortBackpack(4);
     console.log("Backpack TF2 loaded and re-organized by type.");
 });
 
@@ -47,7 +46,6 @@ client.on('loggedOn', () => {
 client.on('webSession', (sessionid, cookies) => {
     manager.setCookies(cookies);
     community.setCookies(cookies);
-    community.startConfirmationChecker(10000, config.identity_secret);
 });
 
 client.on('friendRelationship', function(steamID, relationship) {
@@ -76,7 +74,6 @@ setInterval(function() {
 
 const processTradeOffer = function(offer) {
     busy = true;
-
     return getUserDetalles(offer)
         .then(function(escrowDays) {
             return identyOffer(offer, escrowDays);
@@ -145,8 +142,7 @@ const getUserDetalles = function(offer) {
     return new Promise(function(resolve, reject) {
         offer.getUserDetails(function(err, me, them) {
             if (them) {
-                var escrowDays = them.escrowDays;
-                return resolve(escrowDays);
+                return resolve(them.escrowDays);
             } else {
                 return reject();
             }
@@ -273,12 +269,7 @@ const getValueOfEachItem = function(database, object, buying) {
 
 const setItemDetails = function(object) {
     return new Promise(function(resolve, reject) {
-        console.log(object);
-        var item = {
-            appid: String,
-            name: String,
-            craft: String
-        }
+        var item ={};
         var desc = object.descriptions;
         item.appid = object.appid;
         item.name = object.name;
@@ -289,7 +280,6 @@ const setItemDetails = function(object) {
         if (found) {
             item.craft = 'Non-Craftable';
         }
-
         return resolve(item);
 
 
