@@ -272,7 +272,7 @@ const setItemDetails = function(object) {
         var item ={};
         var desc = object.descriptions;
         item.appid = object.appid;
-        item.name = object.name;
+        item.name = object.market_hash_name;
         item.craft = 'Craftable';
         var found = desc.some(function(el) {
             return el.value === '( Not Usable in Crafting )'
