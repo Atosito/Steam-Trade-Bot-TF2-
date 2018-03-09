@@ -21,7 +21,7 @@ const weapons = require('./Weapons.json')
 const config = require('./config');
 
 var arrayOfObjects = [];
-var numberOfWeaponsToRecesive = 0;
+var numberOfWeaponsToReceive = 0;
 var numberOfWeaponsToGive = 0;
 var busy = false;
 
@@ -265,9 +265,9 @@ const getValueOfEachItem = function(database, object, buying) {
                                 return resolve(0);
                             }
                         } else if ( weapons[ item.name ] && config.weapons.buy ) {
-                            numberOfWeaponsToRecesive++;
-                            if ( numberOfWeaponsToRecesive > config.weapons.buyWeaponsToScrap - 1 ) {
-                                numberOfWeaponsToRecesive -= config.weapons.buyWeaponsToScrap;
+                            numberOfWeaponsToReceive++;
+                            if ( numberOfWeaponsToReceive > config.weapons.buyWeaponsToScrap - 1 ) {
+                                numberOfWeaponsToReceive -= config.weapons.buyWeaponsToScrap;
                                 return resolve( 0.11 );
                             } else {
                                 return resolve( 0 );
