@@ -234,7 +234,7 @@ const getValueOfEachItem = function(database, object, buying) {
                             console.log(item.name + item.craft);
                             return resolve(999999);
                         }                        
-                    } else if ( weapons[ item.name ] && config.weapons.sell ) { // get weapons
+                    } else if ( weapons[ item.name ] && config.weapons.sell ) {
                         numberOfWeaponsToGive++;
                         if ( numberOfWeaponsToGive > config.weapons.sellWeaponsToScrap - 1 ) {
                             numberOfWeaponsToGive -= config.weapons.sellWeaponsToScrap;
@@ -264,7 +264,7 @@ const getValueOfEachItem = function(database, object, buying) {
                                 console.log(item.name + item.craft);
                                 return resolve(0);
                             }
-                        } else if ( weapons[ item.name ] && config.weapons.buy ) { // get weapons
+                        } else if ( weapons[ item.name ] && config.weapons.buy ) {
                             numberOfWeaponsToRecesive++;
                             if ( numberOfWeaponsToRecesive > config.weapons.buyWeaponsToScrap - 1 ) {
                                 numberOfWeaponsToRecesive -= config.weapons.buyWeaponsToScrap;
