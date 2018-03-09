@@ -17,9 +17,12 @@ const fs = require('fs');
 const colors = require('colors');
 const colours = require('colors/safe');
 const currencies = require('./Currencies.json')
+const weapons = require('./Weapons.json')
 const config = require('./config');
 
 var arrayOfObjects = [];
+var numberOfWeaponsToRecesive = 0;
+var numberOfWeaponsToGive = 0;
 var busy = false;
 
 const readAndWrite = require('./readAndWrite.js');
@@ -230,7 +233,15 @@ const getValueOfEachItem = function(database, object, buying) {
                         } else {
                             console.log(item.name + item.craft);
                             return resolve(999999);
-                        }
+                        }                        
+                    } else if ( weapons[ item.name ] && config.weapons.sell ) { // get weapons
+                        numberOfWeaponsToGive++;
+                        if ( numberOfWeaponsToGive > config.weapons.sellWeaponsToScrap - 1 ) {
+                            numberOfWeaponsToGive -= config.weapons.sellWeaponsToScrap;
+                            return resolve( 0.11 );
+                        } else {
+                            return resolve( 0 );
+                        }                        
                     } else {
                         console.log(item.name + 'User is taking an unkown item from us');
                         return resolve(999999);
@@ -252,6 +263,14 @@ const getValueOfEachItem = function(database, object, buying) {
 
                                 console.log(item.name + item.craft);
                                 return resolve(0);
+                            }
+                        } else if ( weapons[ item.name ] && config.weapons.buy ) { // get weapons
+                            numberOfWeaponsToRecesive++;
+                            if ( numberOfWeaponsToRecesive > config.weapons.buyWeaponsToScrap - 1 ) {
+                                numberOfWeaponsToRecesive -= config.weapons.buyWeaponsToScrap;
+                                return resolve( 0.11 );
+                            } else {
+                                return resolve( 0 );
                             }
                         } else {
                             console.log('User is giving us an unknown item. add to DBPrices');
