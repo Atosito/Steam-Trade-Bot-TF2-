@@ -65,6 +65,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
  # Need Help?
  
  Communities that could be helpful:
+ 
  -[Reddit SteamBot](https://www.reddit.com/r/SteamBot/)
  
  -[Doctor McKay forum](https://dev.doctormckay.com/forum/10-general/)
@@ -73,7 +74,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
  
  # License
  
- This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/toomi17/Steam-Trade-Bot-TF2-/blob/master/LICENSE)file for details
+ This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/toomi17/Steam-Trade-Bot-TF2-/blob/master/LICENSE) file for details
  
 # Hire me.
 
