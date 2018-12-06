@@ -1,0 +1,35 @@
+{
+  "Antarctic Parka": {
+    "sell": {
+      "keys": 0,
+      "metal": 9.11
+    },
+    "buy": {
+      "keys": 0,
+      "metal": 9
+    },
+    "max_stock": 1
+  },
+  "Graybanns": {
+    "sell": {
+      "keys": 0,
+      "metal": 6.44
+    },
+    "buy": {
+      "keys": 0,
+      "metal": 6.33
+    },
+    "max_stock": 1
+  },
+  "Mann Co. Supply Crate Key": {
+    "sell": {
+      "keys": 0,
+      "metal": 42.55
+    },
+    "buy": {
+      "keys": 0,
+      "metal": 42.44
+    },
+    "max_stock": 100
+  }
+}
