@@ -20,16 +20,16 @@ This is an open-source project that tries to give you one example of a **Steam-T
 # Set Up Bot
 
 - Edit config.js file.
-- Edit DBPrices.json
+- Edit Database.json
 	### Model
-    	"Item name as it appears in inventory": {
+    	"Item name as it appears in inventory": { // add 'Non-Craftable' if item is uncraft
     
-    	"craftable": "Craftable" or "Non-Craftable",
+    	"buy": {keys:0,metal:0},
     
-    	"buy": price to buy in refs(13.11),
-    
-    	"sell": price to sell in refs(13.22)
-  		}	
+    	"sell": {keys:0,metal:0},
+	
+	"max_stock":1
+	}
 
 
 
@@ -49,8 +49,8 @@ This is an open-source project that tries to give you one example of a **Steam-T
  1. **Login** into Steam and set TF2 as game played.
  2. **Load TF2's BP** and organize it by type.
  3. - new offer -
- 4. **Parse new offer** and set the bot to a busy state. _(This prevents handle multiple offers at same time)_
- 5. **Identify offer** and declare it into an offerState:
+ 4. **Parse new offer** add offer to be parsed to a queue. _(This prevents handle multiple offers at same time)_
+ 5. **Identify offer** declare it into an offerState:
  	- 'aceptable' : Offer will be accepted. It's a donation or it's from admin. 
     - 'deneganle' : Offer wil be declined. It's glitched, has trade hold or its an scam.
     - 'valida' : Offer will be processed and getting value of itemsToGive and itemsToReceive.
@@ -58,7 +58,7 @@ This is an open-source project that tries to give you one example of a **Steam-T
  7. Checking one by one if item is in our DBPrices or it is a currencie.
  8. Sum values of items and determine if offer will be **declined** or **accepted**.
  9. **Confirm** our action.
- 10. set Bot to not-busy state.
+ 10. **Update Inventory**.
  
  # About errors.
  
@@ -82,11 +82,8 @@ This is an open-source project that tries to give you one example of a **Steam-T
 I am able to develope you a customize bot for PayPal money or Steam Items.
 
 ### Possibles features of paid BOT.
-- Max Stock :heavy_check_mark:
-- Post comment on user-profile after each trade. :heavy_check_mark:
+- Prepare offer via commands. Example !buy The Anger 1 :heavy_check_mark:
 - Automatic list items on backpack.tf :heavy_check_mark:
-- Accept a X% overpay in items. Using backpack.tf priceList api. :heavy_check_mark:
-- Send a Steam msg to an admin acc after each trade with items traded. :heavy_check_mark:
 - Usefull commands. :heavy_check_mark:
 
 # Contact me.
