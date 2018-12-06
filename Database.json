@@ -1,12 +1,12 @@
 {
-  "Antarctic Parka": {
+  "Non-Craftable Batter's Helmet": {
     "sell": {
       "keys": 0,
-      "metal": 9.11
+      "metal": 4.11
     },
     "buy": {
       "keys": 0,
-      "metal": 9
+      "metal": 4
     },
     "max_stock": 1
   },
