@@ -419,22 +419,22 @@ const craftMetal = () => {
             var refineds = tf2.backpack.filter(obj => obj.defIndex == 5002);
             var scraps = tf2.backpack.filter(obj => obj.defIndex == 5000);
             var cases = tf2.backpack.filter(obj => config.trash_defindex.indexOf(obj.defIndex) > -1);
-            if (reclaimeds.length < 10) {
+            if (reclaimeds.length < config.min_Reclaimeds) {
                 if (refineds.length > 0) {
                     tf2.craft([parseInt(refineds[0].id)]);
                 }
-            } else if (reclaimeds.length >= 13) {
+            } else if (reclaimeds.length >= config.min_Reclaimeds+3) {
                 for (var x = 2; x + 2 < reclaimeds.length; x += 3) {
                     var craftRecipe = [];
                     craftRecipe.push(parseInt(reclaimeds[x].id), parseInt(reclaimeds[x + 1].id), parseInt(reclaimeds[x + 2].id));
                     tf2.craft(craftRecipe);
                 }
             }
-            if (scraps.length < 10) {
+            if (scraps.length < config.min_Scraps) {
                 if (reclaimeds.length > 0) {
                     tf2.craft([parseInt(reclaimeds[0].id)]);
                 }
-            } else if (scraps.length >= 13) {
+            } else if (scraps.length >= config.min_Scraps+3) {
                 for (var y = 2; y + 2 < scraps.length; y += 3) {
                     var craftRecipe = [];
                     craftRecipe.push(parseInt(scraps[y].id), parseInt(scraps[y + 1].id), parseInt(scraps[y + 2].id));
