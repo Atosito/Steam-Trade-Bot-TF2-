@@ -24,8 +24,11 @@ This is an open-source project that tries to give you one example of a **Steam-T
 	### Model
 	```
 	"Item name as it appears in inventory": {
+	
 	"buy":{keys:0,metal:0},
+	
 	"sell":{keys:0,metal:0},
+	
 	"max_stock":1}
 	```
 
