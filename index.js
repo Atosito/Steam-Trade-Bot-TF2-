@@ -44,6 +44,7 @@ client.on('webSession', (sessionid, cookies) => {
     })
 });
 
+
 client.on('friendRelationship', function (steamID, relationship) {
     if (relationship == 2) {
         logger.correct(` | NEW NOTIFICATION |: Steam ID: ${steamID.getSteamID64()} has added us!`);
