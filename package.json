@@ -3,21 +3,22 @@
   "version": "1.0.0",
   "description": "Node.js program that handle incomming trade offers from Steam plataform.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Tomas Gonzalez gonzaltomas@gmail.com",
-  "license": "see LICENSE in LICENSE.txt",
-   "dependencies": {
+  "dependencies": {
     "jsonfile": "^5.0.0",
     "p-queue": "^3.0.0",
+    "request-promise": "^4.2.2",
     "steam-totp": "^2.1.0",
-     "request-promise": "^4.2.2",
     "steam-tradeoffer-manager": "^2.9.4",
     "steam-user": "^3.29.1",
     "steamcommunity": "^3.38.0",
     "tf2": "^2.1.2",
     "winston": "^3.1.0"
   },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+   "author": "Tomas Gonzalez gonzaltomas@gmail.com",
+  "license": "see LICENSE in LICENSE.txt"
 }
