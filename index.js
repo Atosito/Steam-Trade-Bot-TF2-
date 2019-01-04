@@ -6,6 +6,7 @@ const TeamFortress2 = require('tf2');
 const Utils = require('./utils')
 const Items = require('./item')
 const logger = require('./logger')
+const config = require('../config')
 const PQueue = require('p-queue');
 const client = new SteamUser();
 const tf2 = new TeamFortress2(client);
