@@ -13,6 +13,7 @@
     "jsonfile": "^5.0.0",
     "p-queue": "^3.0.0",
     "steam-totp": "^2.1.0",
+     "request-promise": "^4.2.2",
     "steam-tradeoffer-manager": "^2.9.4",
     "steam-user": "^3.29.1",
     "steamcommunity": "^3.38.0",
