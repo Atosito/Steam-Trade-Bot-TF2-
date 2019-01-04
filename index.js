@@ -7,9 +7,9 @@ const Utils = require('./utils')
 const Items = require('./item')
 const logger = require('./logger')
 const PQueue = require('p-queue');
+const client = new SteamUser();
 const tf2 = new TeamFortress2(client);
 const taskQueue = new PQueue({ concurrency: 1 });
-const client = new SteamUser();
 const community = new SteamCommunity();
 const manager = new TradeOfferManager({
     steam: client,
