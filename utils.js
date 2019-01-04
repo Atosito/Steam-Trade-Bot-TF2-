@@ -1,5 +1,6 @@
 
 const jsonfile = require('jsonfile')
+const request = require('request-promise')
 
 exports.readJSON = (filename) => {
 return jsonfile.readFile(filename)
@@ -20,6 +21,9 @@ var metal = getRight(original.keys * keyPrice) + original.metal;
 return { keys: Math.trunc(metal/keyPrice)
        , metal: getRight(metal%keyPrice)
        }
+}
+exports.promiseRequest = (options) => {
+    return request(options);
 }
 exports.parseToMetal = (obj, keyPrice) => {
 var metal = 0;
