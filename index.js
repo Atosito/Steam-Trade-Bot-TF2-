@@ -39,6 +39,11 @@ client.on('webSession', (sessionid, cookies) => {
         if (err) {
             logger.error(`| WEB COOKIES |: ERROR: ${err.toString()}`);
         } else {
+            taskQueue.add(() => updateInve(id)).then(() => {
+                logger.correct(`| UPDATE INVENTORY |: ended succesfully! `)
+            }).catch((err) => {
+                logger.fail(`| UPDATE INVENTORY |: ERROR: ${err}`)
+            });
             logger.correct(`| WEB COOKIES |: Ready for receive offer!`);
         }
     })
