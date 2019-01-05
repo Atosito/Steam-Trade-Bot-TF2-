@@ -152,7 +152,7 @@ const isBanned = (steamID64) => {
         return Utils.promiseRequest({ url: `https://api.tf2automatic.com/v1/users/alt?steamid=${steamID64}`, method: 'GET', gzip: true, json: true })
             .then((body) => {
                 let banned = false;
-                if (body.result.is_alt || body.result.reviewed_by_detective) {
+                if (body.result.is_alt && body.result.reviewed_by_detective) {
                     banned = true;
                 }
                 return resolve(banned);
