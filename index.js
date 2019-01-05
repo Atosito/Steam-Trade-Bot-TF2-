@@ -39,7 +39,7 @@ client.on('webSession', (sessionid, cookies) => {
         if (err) {
             logger.error(`| WEB COOKIES |: ERROR: ${err.toString()}`);
         } else {
-            taskQueue.add(() => updateInve(id)).then(() => {
+            taskQueue.add(() => updateInve(client.steamID.getSteamID64())).then(() => {
                 logger.correct(`| UPDATE INVENTORY |: ended succesfully! `)
             }).catch((err) => {
                 logger.fail(`| UPDATE INVENTORY |: ERROR: ${err}`)
@@ -370,10 +370,10 @@ const declineTradeOffer = (offer) => {
 }
 
 // MANAGE INVENTORY
-const updateInventory = (steamID, manager) => {
+const updateInventory = (steamID) => {
     return new Promise(async function (resolve, reject) {
         try {
-            const botInv = await getSteamInventory(steamID, manager);
+            const botInv = await getSteamInventory(steamID);
             const parse = await parseSteamInventory(botInv, steamID);
             const write = await Utils.writeJSON(`./${steamID}Inventory.json`, parse);
             return resolve();
