@@ -378,7 +378,7 @@ const updateInventory = (steamID, manager) => {
         }
     });
 }
-const getSteamInventory = (steamid, manager) => {
+const getSteamInventory = (steamid) => {
     return new Promise(function (resolve, reject) {
         manager.getUserInventoryContents(steamid, 440, 2, true, function (err, inventory) {
             if (err) {
