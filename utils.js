@@ -1,6 +1,7 @@
 
 const jsonfile = require('jsonfile')
 const request = require('request-promise')
+const config = require('./config')
 
 exports.isCraftWeapon = (item) => {
     if(item.appid != 440) return false;
