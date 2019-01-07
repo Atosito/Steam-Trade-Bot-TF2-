@@ -250,7 +250,7 @@ const getValueItemsToGive = (DBPrices, toGive) => {
                 obj.metal += 0.33;
             } else if (name == 'Scrap Metal') {
                 obj.metal += 0.11;
-            } else if (Weapons.indexOf(Items.parseName(name)) !== -1) {
+            } else if (Utils.isCraftWeapon(toGive[i])) {
                 obj.metal += 0.055;
             } else {
                 logger.info(`| ITEMS TO GIVE |: User is taking us an non-listed item: ${name}. Declining..`);
@@ -302,7 +302,7 @@ const getValueItemsToReceive = (DBPrices, toReceive, steamID) => {
                             obj.metal += 0.33;
                         } else if (name == 'Scrap Metal') {
                             obj.metal += 0.11;
-                        } else if (Weapons.indexOf(Items.parseName(name)) !== -1) {
+                        } else if (Utils.isCraftWeapon(toReceive[i])) {
                             obj.metal += 0.055;
                         } else {
                             logger.info(`| ITEMS TO RECEIVE |: User is giving us an unknown item: ${name}.`);
