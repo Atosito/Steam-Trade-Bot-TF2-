@@ -277,7 +277,7 @@ const getValueItemsToReceive = (DBPrices, toReceive, steamID) => {
                     let name = Items.correctName(toReceive[i]);
                     let gifted = Items.isGifted(toReceive[i]);
                     if (toReceive[i].appid != 440) {
-                        logger.info(`| ${config.bots[steamID].personaName} | ITEMS TO RECEIVE |: User is giving us an item that is not from TF2: ${name}.`);
+                        logger.info(`| ITEMS TO RECEIVE |: User is giving us an item that is not from TF2: ${name}.`);
                     } else {
                         if (DBPrices[name]) {
                             if (name == 'Mann Co. Supply Crate Key') {
@@ -292,7 +292,7 @@ const getValueItemsToReceive = (DBPrices, toReceive, steamID) => {
                                         obj.keys += DBPrices[name].buy.keys;
                                         obj.metal += DBPrices[name].buy.metal;
                                     } else {
-                                        logger.info(`| ${config.bots[steamID].personaName} | ITEMS TO RECEIVE |: User is giving us an overstocked item. Bot already has ${search.length} of ${name}. Max_Stock is ${DBPrices[name].max_stock}`);
+                                        logger.info(`| ITEMS TO RECEIVE |: User is giving us an overstocked item. Bot already has ${search.length} of ${name}. Max_Stock is ${DBPrices[name].max_stock}`);
                                     }
                                 }
                             }
