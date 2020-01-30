@@ -259,7 +259,7 @@ const getValueItemsToGive = (DBPrices, toGive) => {
         }
         obj.metal = Utils.parseToRefined(obj.metal);
         if (DBPrices['Mann Co. Supply Crate Key']) {
-            obj = Utils.parsePrice(obj, DBPrices['Mann Co. Supply Crate Key'].sell.metal);
+            obj = Utils.parsePrice(obj, DBPrices['Mann Co. Supply Crate Key'].buy.metal);
         }
         return resolve(obj);
     })
