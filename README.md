@@ -1,4 +1,4 @@
-Support me - buy me a coffe :D
+Support me - buy me a coffee :D
 
 https://www.buymeacoffee.com/StaiYxfML
 
