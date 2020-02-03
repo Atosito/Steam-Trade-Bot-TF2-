@@ -1,3 +1,7 @@
+Support me - buy me a coffe :D
+
+https://www.buymeacoffee.com/StaiYxfML
+
 #  Steam Trade Bot with Node.js
 Node.js program that handle incomming trade offers from Steam plataform.
 
